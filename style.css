@@ -15,7 +15,7 @@
     --bg-color: #250821;
     --second-bg-color: #292e33;
     --text-color: white;
-    --hover-color: #250821;
+    --hover-color: #12f7ff;
     --big-font: 2.5rem;
     --norma-font: 2rem;
     --neon-color: #12f7ff;
@@ -102,6 +102,7 @@ span{
 .home{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 9%;
 }
 
@@ -185,7 +186,6 @@ span{
     height: 40px;
     background: transparent;
     border-radius: 50%;
-    border: .2rem solid var(--main-color);
     font-size: 20px;
     color: var(--main-color);
     z-index: 1;
@@ -195,9 +195,106 @@ span{
 .home-sci a:hover{
     color: var(--bg-color);
     background: var(--neon-color);
+    box-shadow: var(--neon-box-shadow);
     border-radius: 50%;
-    border: .2rem solid var(--main-color);
     width: 40px;
     height: 40px;
     transition: .7s;
+}
+
+.btn-box{
+    position: relative;
+    display: flex;
+    
+    width: 34.5rem;
+    height: 5rem;
+
+}
+
+.btn-box a.btn{
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 1rem;
+    align-items: center;
+    width: 8rem;
+    height: 3rem;
+    background: var(--hover-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: .6s;
+    box-shadow: var(--neon-box-shadow);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+a.btn:hover{
+    color: var(--hover-color)
+}
+
+
+
+a.btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--bg-color);
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: .4s;
+
+
+}
+
+a.btn:hover::before{
+    width: 100%;
+}
+
+a.btn:nth-child(2){
+    background: transparent;
+    color: var(--neon-color);
+    border: 2px solid var(--neon-color);
+}
+a.btn:nth-child(2)::before{
+    background: var(--hover-color);
+}
+
+a.btn:nth-child(2):hover{
+    color: var(--bg-color);
+    transition: .4s;
+}
+a.btn:nth-child(2):hover::before{
+    color: var(--bg-color);
+    background: var(--hover-color);
+
+    transition: .4s;
+}
+
+.home-image{
+    position: relative;
+    
+}
+.img-box{
+    text-align: center;
+}
+
+.img-box img{
+    width: 100%;
+    height: auto;
+    
+    
+}
+
+.liquid-shape{
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    z-index: -1;
+    top: 20%;
+    right: inherit;
+    
 }
