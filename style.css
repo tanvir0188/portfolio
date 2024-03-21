@@ -51,6 +51,7 @@ body{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: top .3s;
 }
 
 .logo{
@@ -171,7 +172,7 @@ span{
 
 .home-sci{
     position: absolute;
-    bottom: 4rem;
+    
     width: 170px;
     display: flex;
     justify-content: space-between;
@@ -540,4 +541,38 @@ a.btn:hover::before{
     100%{
         width: 85%;
     }
+}
+
+
+circle {
+    fill:none;
+    stroke: var(--neon-color);
+    stroke-width: 20px;
+    stroke-dasharray: 450;
+    stroke-dashoffset: 300;
+    stroke-linecap: round;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top:0;
+}
+
+.inner{
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    
+    border-radius: 50%;
+}
+
+.outer{
+    width: 160px;
+    height: 160px;
+    padding: 20px;
+    box-shadow: var(--neon-box-shadow);
+    border-radius: 50%;
 }
