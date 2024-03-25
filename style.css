@@ -554,7 +554,9 @@ a.btn:hover::before{
     }
     td{
         text-align: center;
-        font-size: medium;
+        font-size: larger;
+        font-weight: 500;
+        color: var(--neon-color);
     }
 }
 
@@ -567,7 +569,7 @@ a.btn:hover::before{
 .circular-progress {
     --size: 170px;
     --half-size: calc(var(--size) / 2);
-    --stroke-width: 10px;
+    --stroke-width: 15px;
     --radius: calc((var(--size) - var(--stroke-width)) / 2);
     --circumference: calc(var(--radius) * pi * 2);
     --dash: calc((var(--progress) * var(--circumference)) / 100);
@@ -606,10 +608,18 @@ a.btn:hover::before{
       --progress: 0;
     }
     to {
-      --progress: 50;
+      --progress: 80;
     }
   }
   @keyframes progress-animation-2 {
+    from {
+      --progress: 0;
+    }
+    to {
+      --progress: 70;
+    }
+  }
+  @keyframes progress-animation-3 {
     from {
       --progress: 0;
     }
