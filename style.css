@@ -60,6 +60,20 @@ body{
     font-weight: 600;
 }
 
+/* Add CSS for responsive navigation */
+.navbar {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar {
+        display: block;
+    }
+}
+
+/* Add your existing styles for .navbar a and .navbar a:hover here */
+
+
 .navbar a{
     font-size: 1.2rem;
     color: var(--text-color);
@@ -87,8 +101,15 @@ body{
     border-radius: 3px;
     color: var(--second-bg-color);
     cursor: pointer;
-    display: none   ;
+    display: none;
 }
+
+@media screen and (max-width: 767px) {
+    #menu-icon {
+        display: block; /* Show the menu icon on small screens */
+    }
+}
+
 
 section{
     min-height: 100vh;
@@ -212,7 +233,7 @@ span{
 
 }
 
-.btn-box a.btn{
+.btn-box .btn{
     display: inline-flex;
     justify-content: center;
     margin-right: 1rem;
@@ -231,13 +252,13 @@ span{
     z-index: 1;
 }
 
-a.btn:hover{
+.btn:hover{
     color: var(--hover-color)
 }
 
 
 
-a.btn::before{
+.btn::before{
     content: '';
     position: absolute;
     top: 0;
@@ -251,24 +272,24 @@ a.btn::before{
 
 }
 
-a.btn:hover::before{
+.btn:hover::before{
     width: 100%;
 }
 
-a.btn:nth-child(2){
+.btn:nth-child(2){
     background: transparent;
     color: var(--neon-color);
     border: 2px solid var(--neon-color);
 }
-a.btn:nth-child(2)::before{
+.btn:nth-child(2)::before{
     background: var(--hover-color);
 }
 
-a.btn:nth-child(2):hover{
+.btn:nth-child(2):hover{
     color: var(--bg-color);
     transition: .4s;
 }
-a.btn:nth-child(2):hover::before{
+.btn:nth-child(2):hover::before{
     color: var(--bg-color);
     background: var(--hover-color);
 
@@ -277,35 +298,12 @@ a.btn:nth-child(2):hover::before{
 
 .home-image{
     position: relative;
-    margin-right: 5rem;
-    margin-top: 5rem;
+    
     
 }
 .img-box{
     text-align: center;
-    margin-left: 5rem;
-    margin-bottom: 15rem;
-}
-
-.img-box img{
-    width: 110%;
-    height: auto;
     
-    
-}
-
-.liquid-shape{
-    position: absolute;
-    width: 130%;
-    height: 130%;
-    z-index: -1;
-    top: 20%;
-    right: inherit;
-    
-}
-
-.liquid-shape:nth-child(2){
-    filter: blur(50px);
 }
 
 .about{
@@ -416,6 +414,7 @@ a.btn:hover::before{
     grid-template-columns: repeat(2,1fr);
     grid-row-gap: 30px;
     grid-column-gap: 50px;
+    margin-bottom: 100px;
     h3{
         margin-bottom: 2rem;
         font-size: var(--norma-font);
@@ -548,6 +547,7 @@ a.btn:hover::before{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
     table{
         height: 100%;
         width: 100%;
@@ -556,7 +556,7 @@ a.btn:hover::before{
         text-align: center;
         font-size: larger;
         font-weight: 500;
-        color: var(--neon-color);
+        color: white
     }
 }
 
@@ -567,7 +567,7 @@ a.btn:hover::before{
 }
 
 .circular-progress {
-    --size: 170px;
+    --size: 150px;
     --half-size: calc(var(--size) / 2);
     --stroke-width: 15px;
     --radius: calc((var(--size) - var(--stroke-width)) / 2);
@@ -624,6 +624,49 @@ a.btn:hover::before{
       --progress: 0;
     }
     to {
-      --progress: 70;
+      --progress: 50;
     }
+  }
+
+  .contact{
+    background:var(--second-bg-color);
+    width: 100%;
+  }
+  .contact form{
+    text-align: center;
+    max-width: 50rem;
+    margin:1rem auto;
+    margin-bottom: 3rem;
+  }
+  .contact form input, .contact form textarea{
+    width: 100%;
+    color: var(--text-color);
+    background: var(--bg-color);
+    margin-bottom: .8rem;
+    border: none;
+    border-radius: 5px;
+    padding: .7rem  ;
+  }
+  .contact form textarea{
+    resize: none;
+  }
+
+  .formBtn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .formBtn .btn{
+    cursor: pointer;
+    font-size: .9rem;
+    
+  }
+
+  @media (max-width:991px) {
+    section{
+        padding:50px 5%;
+    }
+    
+    
   }
