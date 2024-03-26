@@ -85,15 +85,4 @@ function setProgress(percent) {
 setProgress(50);
 
 
-// Get the menu icon and navbar elements
-const menuIcon = document.getElementById('menu-icon');
-const navbar = document.querySelector('.navbar');
-
-// Add click event listener to menu icon
-menuIcon.addEventListener('click', function() {
-    // Toggle 'active' class on navbar to show/hide it
-    navbar.classList.toggle('active');
-    // Toggle 'active' class on menu icon bars for animation
-    menuIcon.classList.toggle('active');
-});
 
