@@ -84,5 +84,15 @@ function setProgress(percent) {
 // Example: Set progress to 50%
 setProgress(50);
 
-
-
+document.getElementById("menu-icon").addEventListener("click", function() {
+  var navMenu = document.getElementById("navMenu");
+  var navBar = document.getElementById("navbar");
+  if (navMenu.style.display === "flex") {
+      navMenu.style.display = "none";
+      navBar.style.background = "transparent";
+      
+  } else {
+      navMenu.style.display = "flex";
+      navBar.style.background= "#292e33";
+  }
+});
