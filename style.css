@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
+    margin: 0px;
+    padding: 0px;
     border: none;
     outline: none;
     box-sizing: border-box;
@@ -35,7 +37,6 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-
 }
 
 .header {
@@ -715,7 +716,7 @@ a.btn:hover::before {
 
 .project {
     align-items: center;
-
+    height: auto;
     background-color: var(--bg-color);
     justify-content: center;
     text-align: center;
@@ -727,9 +728,14 @@ a.btn:hover::before {
     float: left;
     width: 25%;
     padding: 0 10px;
+    display: none;
     margin-bottom: 20px;
 
 
+}
+
+.show {
+    display: block;
 }
 
 /* Remove extra left and right margins, due to padding */
@@ -737,12 +743,6 @@ a.btn:hover::before {
     margin: 0 -5px;
 }
 
-/* Clear floats after the columns */
-.project-gallery:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 
 
@@ -767,35 +767,39 @@ a.btn:hover::before {
 .myBtnContainer {
     text-align: start;
     margin-bottom: 2rem;
+}
+.pbtn {
+    
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+}
 
-    .pbtn {
-        border: 2px solid black;
-        outline: none;
-        padding: 12px 16px;
-        background-color: white;
-        cursor: pointer;
-    }
+.pbtn:hover {
+    background-color: #ddd;
+}
 
-    .pbtn:hover {
-        background-color: #ddd;
-    }
-
-    .pbtn.active {
-        background-color: #666;
-        color: white;
-    }
+.pbtn.active {
+    background-color: var(--second-bg-color);
+    color: white;
 }
 
 
-.show {
-    display: block;
-}
+
 
 /* responsive */
 
 .mobile-img{
     display: none;
 }
+
+.container{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
 @media screen and (max-width:1082px) {
 
     #menu-icon {
@@ -829,6 +833,13 @@ a.btn:hover::before {
         display: none;
     }
 
+    .mobile-img{
+        display: block;
+        text-align: left;
+        margin-top: 8rem;
+        
+    }
+
     .change-text h3 {
         font-size: 1.4rem;
     }
@@ -839,16 +850,6 @@ a.btn:hover::before {
 
     .center-img {
         width: 100%;
-
-
-        p {
-            text-align: left;
-        }
-
-        img {
-            display: none;
-
-        }
     }
 
 
@@ -859,17 +860,38 @@ a.btn:hover::before {
     section {
         padding: 0 5%;
         width: 100%;
-        height: 100%;
+        
 
+    }
+
+    .project-column {
+        width: 50%;
     }
 
 
 }
 
+@media screen and (max-width: 768px){
+    .project-column {
+        width: 100%;
+        
+
+    }
+    section{
+        width: 100%;
+        
+        padding: 0 5%;
+        
+    }
+}
+
+
+
 @media screen and (max-width: 600px) {
     #navbar{
         padding: 0 10%;
     }
+    
     .home {
         padding: 0 10%;
     }
@@ -877,6 +899,11 @@ a.btn:hover::before {
     .about{
         padding: 0 10%;
     }
+
+    .center-img img {
+        display: none;
+    }
+
     .skills{
         padding: 0 10%;
     }
@@ -886,52 +913,40 @@ a.btn:hover::before {
     .contact{
         padding: 0 10%;
     }
-
-    .mobile-img{
-        display: block;
-        text-align: left;
-        margin-top: 8rem;
-        
-    }
-
-    .project-column {
-        width: 100%;
-        display: block;
-
-    }
+    
 
 }
 
 @media screen and (max-width: 569px){
     #navbar{
         padding: 0 5%;
-        width: 100vw;
+        width: 100%;
     }
     .home {
         padding: 0 5%;
-        width: 100vw;
+        
     }
 
     .header{
         padding: 0 5%;
-        width: 100vw;
+        
     }
 
     .about{
         padding: 0 5%;
-        width: 100vw;
+        
     }
     .skills{
         padding: 0 5%;
-        width: 100vw;
+        
     }
     .project{
         padding: 0 5%;
-        width: 100vw;
+        
     }
     .contact{
         padding: 0 5%;
-        width: 100vw;
+        
     }
 
     .mobile-img{
@@ -941,9 +956,15 @@ a.btn:hover::before {
         
     }
 
-    .project-column {
-        width: 100%;
-        display: block;
+    
+}
 
+@media screen and (max-width: 554px){
+    .container{
+        width: 100%;
     }
+    .header{
+        width: 390px;
+    }
+    
 }
