@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
     border: none;
     outline: none;
     box-sizing: border-box;
@@ -304,7 +302,7 @@ span {
     text-align: center;
 
 }
-
+/* about section */
 .about {
     align-items: center;
     display: flex;
@@ -335,11 +333,6 @@ span {
 
     }
 }
-
-
-
-
-
 
 .center-img img {
     width: 15rem;
@@ -757,7 +750,7 @@ a.btn:hover::before {
 .card {
     box-shadow: var(--neon-box-shadow);
     padding: 5rem 2rem;
-    text-align: center;
+    text-align: left;
     border-radius: 10px;
     background-color: var(--second-bg-color);
     color: black;
@@ -799,40 +792,48 @@ a.btn:hover::before {
 }
 
 /* responsive */
+
+.mobile-img{
+    display: none;
+}
 @media screen and (max-width:1082px) {
 
     #menu-icon {
         display: block;
-        /* Show the menu icon on small screens */
-        transition: all .4s ease;
     }
 
     .navbar {
         display: none;
         flex-direction: column;
         align-items: center;
-    }
 
-    .navbar a {
-        margin: 10px 0;
+        a {
+            margin: 10px 0;
+        }
     }
 
     .bx {
         display: block;
     }
-    .home-content h1 {
-        font-size: 1.875rem;
-    }
+
 
     .home-content {
         width: 100%;
 
+        h1 {
+            font-size: 1.875rem;
+        }
+    }
+
+    .home-image {
+        display: none;
     }
 
     .change-text h3 {
         font-size: 1.4rem;
     }
-    header{
+
+    header {
         padding: 50px 5%;
     }
 
@@ -843,15 +844,18 @@ a.btn:hover::before {
         p {
             text-align: left;
         }
+
+        img {
+            display: none;
+
+        }
     }
 
-    .center-img img {
-        display: none;
 
-    }
     .skill-main {
         display: block;
     }
+
     section {
         padding: 0 5%;
         width: 100%;
@@ -859,15 +863,35 @@ a.btn:hover::before {
 
     }
 
-    .home-image {
-        display: none;
-    }
 
 }
 
 @media screen and (max-width: 600px) {
-    section{
-        padding: 0 10px;
+    #navbar{
+        padding: 0 10%;
+    }
+    .home {
+        padding: 0 10%;
+    }
+
+    .about{
+        padding: 0 10%;
+    }
+    .skills{
+        padding: 0 10%;
+    }
+    .project{
+        padding: 0 10%;
+    }
+    .contact{
+        padding: 0 10%;
+    }
+
+    .mobile-img{
+        display: block;
+        text-align: left;
+        margin-top: 8rem;
+        
     }
 
     .project-column {
@@ -876,4 +900,50 @@ a.btn:hover::before {
 
     }
 
-  }
+}
+
+@media screen and (max-width: 569px){
+    #navbar{
+        padding: 0 5%;
+        width: 100vw;
+    }
+    .home {
+        padding: 0 5%;
+        width: 100vw;
+    }
+
+    .header{
+        padding: 0 5%;
+        width: 100vw;
+    }
+
+    .about{
+        padding: 0 5%;
+        width: 100vw;
+    }
+    .skills{
+        padding: 0 5%;
+        width: 100vw;
+    }
+    .project{
+        padding: 0 5%;
+        width: 100vw;
+    }
+    .contact{
+        padding: 0 5%;
+        width: 100vw;
+    }
+
+    .mobile-img{
+        display: block;
+        text-align: left;
+        margin-top: 8rem;
+        
+    }
+
+    .project-column {
+        width: 100%;
+        display: block;
+
+    }
+}
