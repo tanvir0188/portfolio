@@ -103,15 +103,7 @@ body {
 
 }
 
-#menu-icon {
-    font-size: 1.8rem;
-    z-index: 10001;
-    background-color: var(--hover-color);
-    border-radius: 3px;
-    color: var(--second-bg-color);
-    cursor: pointer;
-    display: none;
-}
+
 
 section {
     padding: 0 20%;
@@ -550,7 +542,7 @@ section {
     height: 120px;
     width: 120px;
     border-radius: 50%;
-    background: conic-gradient(#12f7ff 3.6deg, #250821 0deg);
+    background: conic-gradient(--neon-color 3.6deg, --bg-color 0deg);
     box-shadow: var(--neon-box-shadow);
     display: flex;
     justify-content: center;
@@ -562,7 +554,7 @@ section {
     height: 105px;
     width: 105px;
     border-radius: 50%;
-    background-color: #292e33;
+    background-color: var(--second-bg-color);
 }
 .progress-value{
     position: relative;
@@ -610,21 +602,74 @@ section {
 
 /* Style the counter cards */
 .card {
+    position: relative;
     box-shadow: var(--neon-box-shadow);
-    padding: 5rem 2rem;
+    height: 18rem;
+    display: flex;
+    padding: 1rem 2rem 1rem 2rem;
+    flex-direction: column;
+    justify-content: center;
     text-align: left;
     border-radius: 10px;
     background-color: var(--second-bg-color);
     color: black;
-
-    h3 {
-        color: var(--neon-color);
-    }
-
-    p {
-        color: white;
-    }
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Add transition for smoother animation */
+    overflow: hidden; /* Ensure the description covers the whole card */
+    color: var(--neon-color);
 }
+
+.card .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Cover the entire width of the card */
+    height: 100%; /* Cover the entire height of the card */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Initially hidden */
+}
+
+.card:hover .description {
+    opacity: 1; /* Show the description on hover */
+}
+
+.card:hover h3 {
+    display: none;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Move the card 5 pixels upwards on hover */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+}
+
+.card:hover .github-link {
+    display: block;
+}
+
+.github-link {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff; /* GitHub button color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.github-link:hover {
+    background-color: #0056b3; /* GitHub button color on hover */
+}
+
 
 .myBtnContainer {
     text-align: start;
@@ -693,6 +738,7 @@ section {
 
 footer{
     text-align: center;
+    font-size: small;
 }
 
 /* responsive section */
@@ -764,6 +810,7 @@ footer{
         padding-top: 1rem;
     }
 
+
     .table-container{
         margin-top: 50px;
         table{
@@ -776,7 +823,9 @@ footer{
             margin-bottom: .5rem;
     }
         
-    
+    .project .main-text{
+        padding-top: 0px;
+    }
 
     
 
@@ -801,8 +850,16 @@ footer{
         display: none;
     }
 
+    .project-column{
+        width: 100%;
+    }
+
     #menu-icon {
         display: block;
+    }
+
+    .card{
+        height: 15rem;
     }
 }
 
@@ -822,6 +879,23 @@ footer{
         min-height: auto;
         margin-bottom: 10rem;
     }
+
+    .project .main-text h2{
+        
+        font-size: 1.8rem;
+
+    }
+
+    .contact .main-text h2{
+        font-size: 1.8rem;
+    }
+    .pbtn{
+        padding: 10px 12px;
+    }
+
+    footer{
+        font-size: xx-small;
+    }
 }
 
 
@@ -839,6 +913,11 @@ footer{
     .home-content p {
         margin-top: 1rem;
         margin-bottom: 1rem;
+    }
+
+    .pbtn{
+        padding: 5px 8px;
+        font-size: 12px;
     }
 }
 
@@ -864,11 +943,17 @@ footer{
     .center-img p{
         font-size: var(--mobile-font);
     }
+    .skill-left .info{
+        font-size: small;
+    }
 }
 @media screen and (max-width:346px){
 
     .table-container td{
         font-size: small;
+    }
+    .skill-left .info{
+        font-size: smaller;
     }
     
     
@@ -884,12 +969,19 @@ footer{
         height: 80px;
         width: 80px;
     }
+    .pbtn{
+        padding: 3px 5px;
+        font-size: 10px;
+    }
+
 }
 
 @media screen and (max-width:300px){
     .mobile-img img{
         width:200px
     }
+
+    
 
     
 }
