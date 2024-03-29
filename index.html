@@ -11,20 +11,31 @@
 
 <body>
 
-    <div class="navbar" id="navbar">
-        <div class="navbar-logo">
-            <a href="#" id="logo" class="logo">Arnob</a>
-        </div>
-        <div class="navbar-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#project">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="bx bx-menu" id="menu-icon"></div>
-
-    </div>
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a><svg xmlns="http://www.w3.org/2000/svg" height="26"
+                        viewBox="0 96 960 960" width="26">
+                        <path
+                            d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+                    </svg></a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skill</a></li>
+            <li><a href="#project">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul>
+            <li class="logo"><a href="#">
+                    <h1>Arnob</h1>
+                </a></li>
+            <li class="hideOnMobile"><a href="#home">Home</a></li>
+            <li class="hideOnMobile"><a href="#about">About</a></li>
+            <li class="hideOnMobile"><a href="#skills">Skill</a></li>
+            <li class="hideOnMobile"><a href="#project">Projects</a></li>
+            <li class="hideOnMobile"><a href="#contact">Contact</a></li>
+            <li class="menu-button" onclick=showSidebar()><a><div class="bx bx-menu" id="menu-icon"></div></a></li>
+        </ul>
+    </nav>
 
     <section class="home" id="home">
         <div class="home-content">
@@ -45,7 +56,7 @@
             </div>
 
             <p>
-                This my first portfolio website to show all my projects, skills and experiences
+                This is my first portfolio website to show all my projects, skills and experiences
             </p>
 
             <div class="btn-box">
@@ -218,7 +229,7 @@
                     <a class="github-link" href="#">GitHub</a>
                 </div>
             </div>
-        
+
             <div class="project-column android">
                 <div class="card">
                     <h3>My contact</h3>
@@ -226,7 +237,7 @@
                     <a class="github-link" href="#">GitHub</a>
                 </div>
             </div>
-        
+
             <div class="project-column web">
                 <div class="card">
                     <h3>Flapper</h3>
@@ -234,7 +245,7 @@
                     <a class="github-link" href="#">GitHub</a>
                 </div>
             </div>
-        
+
             <div class="project-column android">
                 <div class="card">
                     <h3>Attendance app</h3>
@@ -242,7 +253,7 @@
                     <a class="github-link" href="#">GitHub</a>
                 </div>
             </div>
-        
+
             <div class="project-column web">
                 <div class="card">
                     <h3>Food donation</h3>
@@ -250,15 +261,16 @@
                     <a class="github-link" href="#">GitHub</a>
                 </div>
             </div>
-        
+
             <div class="project-column web">
                 <div class="card">
                     <h3>FIFA World Cup 2022</h3>
-                    <p class="description">Oracle Apex-based database project <br>Username: supporter1 <br>Password: supporter1</p>
+                    <p class="description">Oracle Apex-based database project <br>Username: supporter1 <br>Password:
+                        supporter1</p>
                     <a class="github-link" href="#">GitHub</a>
                 </div>
             </div>
-        
+
             <div class="project-column research">
                 <div class="card">
                     <h3>Amherst candy company</h3>
@@ -266,16 +278,17 @@
                     <a class="github-link" href="#">GitHub</a>
                 </div>
             </div>
-        
+
             <div class="project-column research">
                 <div class="card">
                     <h3>Ml applied in playstore reviews</h3>
-                    <p class="description">App categorization system using app characteristics using Ml algorithms ICICCT-2024(Paper:154)</p>
+                    <p class="description">App categorization system using app characteristics using Ml algorithms
+                        ICICCT-2024(Paper:154)</p>
                     <a class="github-link" href="#">GitHub</a>
                 </div>
             </div>
         </div>
-        
+
     </section>
     <section class="contact" id="contact">
         <div class="main-text">
@@ -355,7 +368,6 @@
         circleAnimation('projectManagementCircle', 60);
         circleAnimation('communicationCircle', 70);
     </script>
-
 
 
 

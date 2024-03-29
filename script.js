@@ -61,32 +61,9 @@ setInterval(changeWord, 3000); //call every 4s bac
 
 
 
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-100px";
-  }
-  prevScrollpos = currentScrollPos;
-};
 
 
-const circle = document.querySelector("circle");
-const radius = circle.r.baseVal.value;
-const circumference = 2 * Math.PI * radius;
 
-circle.style.strokeDasharray = `${circumference} ${circumference}`;
-circle.style.strokeDashoffset = circumference;
-
-function setProgress(percent) {
-  const offset = circumference - (percent / 100) * circumference;
-  circle.style.strokeDashoffset = offset;
-}
-
-// Example: Set progress to 50%
-setProgress(50);
 
 
 
@@ -104,8 +81,20 @@ function circleAnimation(circleId, end) {
     if (progressStartValue == progressEndValue) {
       clearInterval(progress);
     }
-  })
+  }, 15)
 }
+
+//responsive navbar
+function showSidebar() {
+  const sidebar = document.querySelector('.sidebar')
+  sidebar.style.display = 'flex'
+}
+function hideSidebar() {
+  const sidebar = document.querySelector('.sidebar')
+  sidebar.style.display = 'none'
+}
+
+
 
 
 
