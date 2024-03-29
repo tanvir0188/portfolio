@@ -58,6 +58,9 @@ const changeWord = () => {
 changeWord(); //initial call
 setInterval(changeWord, 3000); //call every 4s bac
 
+
+
+
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
@@ -68,6 +71,7 @@ window.onscroll = function () {
   }
   prevScrollpos = currentScrollPos;
 };
+
 
 const circle = document.querySelector("circle");
 const radius = circle.r.baseVal.value;
@@ -84,18 +88,24 @@ function setProgress(percent) {
 // Example: Set progress to 50%
 setProgress(50);
 
-document.getElementById("menu-icon").addEventListener("click", function() {
-  var navMenu = document.getElementById("navMenu");
-  var navBar = document.getElementById("navbar");
-  if (navMenu.style.display === "flex") {
-      navMenu.style.display = "none";
-      navBar.style.background = "transparent";
-      
-  } else {
-      navMenu.style.display = "flex";
-      navBar.style.background= "#292e33";
-  }
-});
 
-//project filter
-// JavaScript code for filtering projects
+
+//circular bar
+function circleAnimation(circleId, end) {
+  let circularProgress = document.getElementById(circleId); // Selecting the element by ID
+  let progressStartValue = 0;
+  let progressEndValue = end;
+  let speed = 100;
+
+  let progress = setInterval(() => {
+    progressStartValue++;
+    circularProgress.style.background = `conic-gradient(#12f7ff ${progressStartValue * 3.6}deg, #250821 0deg)`;
+
+    if (progressStartValue == progressEndValue) {
+      clearInterval(progress);
+    }
+  })
+}
+
+
+
