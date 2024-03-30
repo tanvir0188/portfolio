@@ -398,17 +398,21 @@
 
 
         </div>
-        <form action="#">
-            <input type="text" placeholder="Your Name">
-            <input type="text" placeholder="Your Email">
-            <input type="text" placeholder="Your Address">
-            <input type="text" placeholder="Phone Number">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <form name="submit-to-google-sheet" action="#">
+            <input type="text" name="name" required placeholder="Your Name">
+            <input type="text" name="email" required placeholder="Your Email">
+            <input type="text" name="address" required placeholder="Your Address">
+            <input type="text" name="phone" required placeholder="Phone Number">
+            <textarea name="message" id=""  cols="30" rows="10" placeholder="Your Message" required></textarea>
+
             <div class="btn-box formBtn">
                 <button type="submit" class="btn">Send Message</button>
             </div>
 
+
         </form>
+
+        <div id="loading-indicator" style="display: none; text-align: center; color: #D6E96C;">Loading...</div>
     </section>
 
     <footer>
@@ -463,6 +467,32 @@
             });
         }
     </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzRCqyo0ssEleblBVQJWC0bxtKxLn_-MvGIsTHMz5ZxPSoYgitif86aqm1Q4oknZ0l8/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const loadingIndicator = document.getElementById('loading-indicator');
+    
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            // Show loading indicator
+            loadingIndicator.style.display = 'block';
+    
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response =>{
+                form.reset();
+                alert('Your message has been received.');
+                
+            })
+            .catch(error => console.error('Error!', error.message))
+            .finally(() => {
+                // Hide loading indicator
+                loadingIndicator.style.display = 'none';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+    
+    
     <script>
         circleAnimation('researchCircle', 80);
         circleAnimation('teamworkCircle', 70);

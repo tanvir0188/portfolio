@@ -20,26 +20,26 @@
     --norma-font: 2rem;
     --mobile-font: 1rem;
     --neon-color: #D6E96C;
-    --neon-box-shadow: 0 0 .5rem #12f7ff;
+    --neon-box-shadow: 0 0 .5rem #D6E96C;
     --h2-font: 3rem;
-    --link-active-text-shadow: 0 0 10px rgba(18, 247, 255, 0.6),
-        0 0 20px rgba(18, 247, 255, 0.6),
-        0 0 30px rgba(18, 247, 255, 0.6),
-        0 0 40px rgba(18, 247, 255, 0.6),
-        0 0 70px rgba(18, 247, 255, 0.6),
-        0 0 80px rgba(18, 247, 255, 0.6),
-        0 0 100px rgba(18, 247, 255, 0.6),
-        0 0 150px rgba(18, 247, 255, 0.6);
-    --font-neon-text-shadow: 0 0 10px rgba(17, 247, 255, 0.3),
-        0 0 20px rgba(17, 247, 255, 0.3),
-        0 0 30px rgba(17, 247, 255, 0.3),
-        0 0 40px rgba(17, 247, 255, 0.3),
-        0 0 50px rgba(17, 247, 255, 0.3),
-        0 0 60px rgba(17, 247, 255, 0.3),
-        0 0 70px rgba(17, 247, 255, 0.3),
-        0 0 80px rgba(17, 247, 255, 0.3),
-        0 0 90px rgba(17, 247, 255, 0.3),
-        0 0 100px rgba(17, 247, 255, 0.3);
+    --link-active-text-shadow: 0 0 10px rgba(214, 233, .6),
+        0 0 20px rgba(214, 233, .6),
+        0 0 30px rgba(214, 233, .6),
+        0 0 40px rgba(214, 233, .6),
+        0 0 70px rgba(214, 233, .6),
+        0 0 80px rgba(214, 233, .6),
+        0 0 100px rgba(214, 233, .6),
+        0 0 150px rgba(214, 233, .6);
+    --font-neon-text-shadow: 0 0 10px rgba(214, 233, .3),
+        0 0 20px rgba(214, 233, .3),
+        0 0 30px rgba(214, 233, .3),
+        0 0 40px rgba(214, 233, .3),
+        0 0 50px rgba(214, 233, .3),
+        0 0 60px rgba(214, 233, .3),
+        0 0 70px rgba(214, 233, .3),
+        0 0 80px rgba(214, 233, .3),
+        0 0 90px rgba(214, 233, .3),
+        0 0 100px rgba(214, 233, .3);
 
 }
 
@@ -1171,10 +1171,10 @@ footer {
         width: 100%;
     }
 
-    .about {
+    /* .about {
         min-height: auto;
         margin-bottom: 10rem;
-    }
+    } */
 
     .project .main-text h2 {
 
