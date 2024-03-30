@@ -22,6 +22,14 @@
     --neon-color: #12f7ff;
     --neon-box-shadow: 0 0 .5rem #12f7ff;
     --h2-font: 3rem;
+    --link-active-text-shadow: 0 0 10px rgba(18, 247, 255, 0.6),
+        0 0 20px rgba(18, 247, 255, 0.6),
+        0 0 30px rgba(18, 247, 255, 0.6),
+        0 0 40px rgba(18, 247, 255, 0.6),
+        0 0 70px rgba(18, 247, 255, 0.6),
+        0 0 80px rgba(18, 247, 255, 0.6),
+        0 0 100px rgba(18, 247, 255, 0.6),
+        0 0 150px rgba(18, 247, 255, 0.6);
     --font-neon-text-shadow: 0 0 10px rgba(17, 247, 255, 0.3),
         0 0 20px rgba(17, 247, 255, 0.3),
         0 0 30px rgba(17, 247, 255, 0.3),
@@ -38,6 +46,11 @@
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 nav {
@@ -73,14 +86,7 @@ nav a {
 
 nav a:hover {
     color: var(--neon-color);
-    text-shadow: 0 0 10px rgba(18, 247, 255, 0.6),
-        0 0 20px rgba(18, 247, 255, 0.6),
-        0 0 30px rgba(18, 247, 255, 0.6),
-        0 0 40px rgba(18, 247, 255, 0.6),
-        0 0 70px rgba(18, 247, 255, 0.6),
-        0 0 80px rgba(18, 247, 255, 0.6),
-        0 0 100px rgba(18, 247, 255, 0.6),
-        0 0 150px rgba(18, 247, 255, 0.6);
+    text-shadow: var(--link-active-text-shadow)
 }
 
 .logo a {
@@ -306,10 +312,41 @@ section {
     transition: .4s;
 }
 
+.home-sci {
+    position: absolute;
+
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.home-sci a:hover {
+    color: var(--bg-color);
+    background: var(--neon-color);
+    box-shadow: var(--neon-box-shadow);
+    border-radius: 50%;
+    transition: .7s;
+}
+
 .home-image {
     position: relative;
-
-
 }
 
 .img-box {
@@ -680,18 +717,49 @@ section {
     box-shadow: var(--neon-box-shadow);
     height: 18rem;
     display: flex;
-    padding: 1rem 2rem 1rem 2rem;
+
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    border-radius: 10px;
+
     background-color: var(--second-bg-color);
     color: black;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     /* Add transition for smoother animation */
     overflow: hidden;
-    /* Ensure the description covers the whole card */
-    color: var(--neon-color);
+}
+
+.card .image-overlay {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.card .image-overlay img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.card .image-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .image-overlay::before {
+    opacity: 1;
+}
+
+.card:hover .image-overlay img {
+    transform: scale(1.1);
+    /* Optional: Increase image size on hover */
 }
 
 .card .description {
@@ -699,6 +767,7 @@ section {
     top: 0;
     left: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -713,6 +782,14 @@ section {
     transition: opacity 0.3s ease;
     opacity: 0;
     /* Initially hidden */
+
+    h2 {
+        color: var(--neon-color);
+    }
+
+    p {
+        font-size: small;
+    }
 }
 
 .card:hover .description {
@@ -720,9 +797,7 @@ section {
     /* Show the description on hover */
 }
 
-.card:hover h3 {
-    display: none;
-}
+
 
 .card:hover {
     transform: translateY(-5px);
@@ -743,7 +818,7 @@ section {
     transform: translateX(-50%);
     background-color: var(--neon-color);
     /* GitHub button color */
-    color: white;
+    color: var(--bg-color);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -751,8 +826,8 @@ section {
 }
 
 .github-link:hover {
-    
-    /* GitHub button color on hover */
+
+    box-shadow: var(--neon-box-shadow);
 }
 
 
@@ -765,19 +840,29 @@ section {
 
     outline: none;
     padding: 12px 16px;
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
     margin-top: 5px;
+    color: var(--text-color);
 
 }
 
 .pbtn:hover {
-    background-color: #ddd;
+
+    color: var(--neon-color);
+    text-shadow: var(--link-active-text-shadow);
 }
 
 .pbtn.active {
-    background-color: var(--second-bg-color);
-    color: white;
+    color: var(--neon-color);
+    text-shadow: 0 0 10px rgba(18, 247, 255, 0.6),
+        0 0 20px rgba(18, 247, 255, 0.6),
+        0 0 30px rgba(18, 247, 255, 0.6),
+        0 0 40px rgba(18, 247, 255, 0.6),
+        0 0 70px rgba(18, 247, 255, 0.6),
+        0 0 80px rgba(18, 247, 255, 0.6),
+        0 0 100px rgba(18, 247, 255, 0.6),
+        0 0 150px rgba(18, 247, 255, 0.6);
 }
 
 .contact {
@@ -930,6 +1015,9 @@ footer {
 
 @media screen and (max-width:900px) {
 
+    .home-content p{
+        font-size: small;
+    }
 
     .center-img {
         text-align: left;
@@ -1015,6 +1103,11 @@ footer {
         margin-bottom: 1rem;
     }
 
+    .github-link {
+        padding: 5px 15px;
+
+    }
+
     .pbtn {
         padding: 5px 8px;
         font-size: 12px;
@@ -1026,6 +1119,14 @@ footer {
     .home-content h1 {
         font-size: 2rem;
         line-height: 1;
+    }
+
+    .home-sci {
+        width: 120px;
+
+        a {
+            font-size: 12px;
+        }
     }
 
     .mobile-img {
@@ -1053,16 +1154,26 @@ footer {
     }
 
     .card {
-        height: 12rem;
+        height: 14rem;
     }
 
     .project-gallery {
         height: 26rem;
-        margin-bottom: 5px;
+        margin-bottom: 20px;
     }
 
     .project {
         min-height: auto;
+    }
+
+    .description h2 {
+        font-size: larger;
+    }
+
+    .github-link {
+        padding: 3px 12px;
+        font-size: small;
+
     }
 
     .sidebar {
