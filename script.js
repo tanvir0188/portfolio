@@ -76,7 +76,7 @@ function circleAnimation(circleId, end) {
 
   let progress = setInterval(() => {
     progressStartValue++;
-    circularProgress.style.background = `conic-gradient(#12f7ff ${progressStartValue * 3.6}deg, #250821 0deg)`;
+    circularProgress.style.background = `conic-gradient(#D6E96C ${progressStartValue * 3.6}deg, #250821 0deg)`;
 
     if (progressStartValue == progressEndValue) {
       clearInterval(progress);

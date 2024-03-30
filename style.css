@@ -12,14 +12,14 @@
 }
 
 :root {
-    --bg-color: #250821;
-    --second-bg-color: #292e33;
+    --bg-color: #171926;
+    --second-bg-color: #444557;
     --text-color: white;
-    --hover-color: #12f7ff;
+    --hover-color: #D6E96C;
     --big-font: 2.5rem;
     --norma-font: 2rem;
     --mobile-font: 1rem;
-    --neon-color: #12f7ff;
+    --neon-color: #D6E96C;
     --neon-box-shadow: 0 0 .5rem #12f7ff;
     --h2-font: 3rem;
     --link-active-text-shadow: 0 0 10px rgba(18, 247, 255, 0.6),
@@ -648,6 +648,108 @@ section {
     color: white;
 }
 
+/* service section */
+
+.service{
+    
+    
+    padding-top: 8rem;
+    
+    background-color: transparent;
+    color: white;
+    ul{
+        list-style: none;
+        padding-left: 1rem;
+    }
+}
+
+.service .content{
+    width: 100%;
+    
+
+}
+
+
+.service .content h1{
+    font-size: 2.5rem;
+    line-height: 3.7rem;
+    letter-spacing: 1px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+    
+    
+}
+
+.column .card{
+    padding: 16px;
+    color: var(--text-color);
+    border-radius: 30px;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    overflow: hidden;
+    transition: .6s;
+    border: 0.5px solid rgba(255, 255,255, 0.5);
+    margin-top: 10px;
+    height: 14rem;
+}
+
+.column .card:hover{
+    color: black;
+}
+
+.column .card:hover:after{
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+}
+
+.column .card:after{
+    position: absolute;
+    content: "";
+    height: 40%;
+    width: 8%;
+    top: 30%;
+    right: -4%;
+    background-color: var(--neon-color);
+    z-index: -1;
+    border-radius: 30px;
+    transition: .6s;
+}
+
+.row-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3rem;
+
+    
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+    margin: 0 -5px;
+
+    height: 100%;
+    
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
 
 
 /* project section */
@@ -1002,7 +1104,7 @@ footer {
     }
 
     .project .main-text {
-        padding-top: 0px;
+        padding-top: 1rem;
     }
 
 
@@ -1015,7 +1117,7 @@ footer {
 
 @media screen and (max-width:900px) {
 
-    .home-content p{
+    .home-content p {
         font-size: small;
     }
 
@@ -1041,6 +1143,19 @@ footer {
     .card {
         height: 15rem;
     }
+    .service .content h1{
+        line-height: 2.3rem;
+        font-size: 2.3rem;
+    }
+
+    .column{
+        width: 100%;
+    }
+    .service{
+        padding-top: 0;
+    }
+
+    
 }
 
 @media screen and (max-width:800px) {
@@ -1220,6 +1335,11 @@ footer {
 
     .mobile-img img {
         width: 200px
+    }
+
+    .service .content h1{
+        line-height: 1.8rem;
+        font-size: 1.8rem;
     }
 
 
