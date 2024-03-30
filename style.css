@@ -165,6 +165,11 @@ section {
 
 .mobile-img {
     display: none;
+
+}
+.mobile-img img{
+    width: 270px;
+    height: 350px;
 }
 
 .home {
@@ -351,6 +356,11 @@ section {
 
 .img-box {
     text-align: center;
+
+}
+.img-box img{
+    width: 320px;
+    height: 440px;
 }
 
 
@@ -1228,6 +1238,12 @@ footer {
         font-size: 12px;
     }
 }
+@media screen and (max-width:520px) {
+    .service .content h1{
+        line-height: 2rem;
+        font-size: 2rem;
+    }
+}
 
 @media screen and (max-width:400px) {
 
@@ -1246,6 +1262,7 @@ footer {
 
     .mobile-img {
         margin-top: 1rem;
+
 
     }
 
@@ -1334,7 +1351,8 @@ footer {
     }
 
     .mobile-img img {
-        width: 200px
+        width: 200px;
+        height: 270px;
     }
 
     .service .content h1{
