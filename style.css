@@ -168,7 +168,7 @@ section {
 
 }
 .mobile-img img{
-    width: 270px;
+    width: 280px;
     height: 350px;
 }
 
@@ -352,10 +352,12 @@ section {
 
 .home-image {
     position: relative;
+    margin-left: 20px;
 }
 
 .img-box {
     text-align: center;
+    
 
 }
 .img-box img{
@@ -1052,6 +1054,11 @@ footer {
     .project-column {
         width: 50%;
     }
+
+    .img-box img{
+        width: 290px;
+        height: 400px;
+    }
 }
 
 @media screen and (max-width:1184px) {
@@ -1062,6 +1069,8 @@ footer {
     nav {
         padding: 0 10%;
     }
+    
+    
 
 
 
@@ -1267,7 +1276,8 @@ footer {
     }
 
     .mobile-img img {
-        height: 330px;
+        height: 310px;
+        width: 240px;
     }
 
     .btn {
