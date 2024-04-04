@@ -708,10 +708,7 @@ section {
 
 }
 
-.column .card ul{
-    list-style: none;
-    padding-left: 1rem;
-}
+
 
 .column .card:hover{
     color: black;
