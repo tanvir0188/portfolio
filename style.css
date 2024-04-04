@@ -669,10 +669,7 @@ section {
     
     background-color: transparent;
     color: white;
-    ul{
-        list-style: none;
-        padding-left: 1rem;
-    }
+    
 }
 
 .service .content{
@@ -708,6 +705,12 @@ section {
     border: 0.5px solid rgba(255, 255,255, 0.5);
     margin-top: 10px;
     height: 14rem;
+
+}
+
+.column .card ul{
+    list-style: none;
+    padding-left: 1rem;
 }
 
 .column .card:hover{
