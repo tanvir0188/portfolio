@@ -474,7 +474,7 @@ section {
 }
 
 .html {
-    width: 85%;
+    width: 90%;
     background-color: var(--neon-color);
     animation: html 2s;
 }
@@ -486,7 +486,7 @@ section {
 }
 
 .php {
-    width: 65%;
+    width: 75%;
     background-color: var(--neon-color);
     animation: php 3s;
 }
@@ -498,19 +498,19 @@ section {
 }
 
 .java {
-    width: 80%;
+    width: 65%;
     background-color: var(--neon-color);
     animation: java 3s;
 }
 
 .cpp {
-    width: 75%;
+    width: 60%;
     background-color: var(--neon-color);
     animation: cpp 3s;
 }
 
 .python {
-    width: 50%;
+    width: 70%;
     background-color: var(--neon-color);
     animation: python 3s;
 }
