@@ -492,13 +492,13 @@ section {
 }
 
 .javascript {
-    width: 40%;
+    width: 70%;
     background-color: var(--neon-color);
     animation: javascript 3s;
 }
 
-.java {
-    width: 65%;
+.go {
+    width: 40%;
     background-color: var(--neon-color);
     animation: java 3s;
 }
@@ -510,7 +510,7 @@ section {
 }
 
 .python {
-    width: 70%;
+    width: 90%;
     background-color: var(--neon-color);
     animation: python 3s;
 }
